@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Hello from Render!"
-
-if name == '__main__':
-=======
-# -*- coding: utf-8 -*-
-from flask import Flask, jsonify
+import os
 import requests
 import pandas as pd
-import numpy as np
+from flask import Flask, jsonify
 from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
@@ -41,5 +29,5 @@ def get_recommendation():
     })
 
 if __name__ == '__main__':
->>>>>>> 25fe221c (Initial commit)
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
