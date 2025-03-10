@@ -1,0 +1,14 @@
+# flyctl launch added from .gitignore
+# تجاهل ملفات البيئة الافتراضية
+**/env
+**/venv
+
+# تجاهل الملفات الكبيرة المكتشفة
+**/*.dylib
+**/*.so
+**/*.o
+**/*.bin
+**/*.lib
+**/*.a
+
+fly.toml
