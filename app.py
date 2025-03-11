@@ -5,7 +5,9 @@ from flask import Flask, jsonify
 from sklearn.preprocessing import MinMaxScaler
 from flask import Flask
 app = Flask(__name__)
-
+@app.route('/')
+def home():
+    return render_template('index.html')
 @app.route('/')
 def home():
     return "Hello, Flask is running on Fly.io!
