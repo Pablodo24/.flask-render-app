@@ -28,5 +28,5 @@ def get_recommendation():
         "recommendation": "BUY" if predicted_price > price_data["close"].iloc[-1] else "SELL"
     })
 
-if name == "__main__":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
