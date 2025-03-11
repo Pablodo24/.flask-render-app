@@ -15,6 +15,10 @@ def get_binance_data():
     df['close'] = df['close'].astype(float)
     return df[['close']]
 
+@app.route('/')
+def home():
+    return "Welcome to Flask AI App!"
+
 @app.route('/recommendation', methods=['GET'])
 def get_recommendation():
     price_data = get_binance_data()
@@ -27,6 +31,7 @@ def get_recommendation():
         "predicted_price": predicted_price,
         "recommendation": "BUY" if predicted_price > price_data["close"].iloc[-1] else "SELL"
     })
+    return jsonify({"message": "Your recommendation API is working!"})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
